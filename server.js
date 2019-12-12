@@ -8,7 +8,7 @@ app.get('/helloWorld', function (req, res) //Creating an api
 
 app.get('/hellostudents', function (req, res) //Creating an api
 { 
-    res.send('Hello Students'); 
+    res.send('Hello Smart'); 
 });
 
 let server = app.listen(8081, function () 
