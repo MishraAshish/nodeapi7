@@ -1,6 +1,24 @@
 let express = require('express'),
-router = express.Router({caseSensitive:true});
+router = express.Router({caseSensitive:false}),
+userModel = require("./DataModel/UserModel");
 
+
+router.get("/createuser",(req, res)=>{
+    console.log(req.query);
+
+    let objUserModel = new userModel(req.query);
+
+    console.log(objUserModel);
+
+    objUserModel.save((err, data, next)=>{        
+        if (err) {
+            res.send("Error Occurred"+ err);
+        }      
+        res.json(data);
+      });
+
+    //res.send(req.query);
+});
 
 //REST
 router.get('/helloWorld', function (req, res) //Creating an api
