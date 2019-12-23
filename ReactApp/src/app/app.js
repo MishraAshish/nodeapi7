@@ -1,9 +1,9 @@
 import React from "react";
 
 //export class App extends React.Component{
-export default class App extends React.Component{
+export class App extends React.Component{
     constructor(props, context){
-        console.log("We are in constructor");
+        super(props, context);
     }
 
     render(){

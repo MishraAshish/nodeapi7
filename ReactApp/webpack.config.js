@@ -1,4 +1,4 @@
-let webpack = require("webpack"),
+let //webpack = require("webpack"),
 path = require("path"),
 DIST_DIR = path.resolve(__dirname,"dist"),
 SRC_DIR = path.resolve(__dirname,"src"),
@@ -33,21 +33,23 @@ webpackConfig = {
                 include:SRC_DIR,
                 use:['style-loader','css-loader']
             },
-            {
-                include:SRC_DIR,
-                test: /\.(gif|png|jpe?g|svg)$/i,
-                use: [
-                  'file-loader',
-                  {
-                    loader: 'image-webpack-loader',
-                    options: {
-                      bypassOnDebug: true, // webpack@1.x
-                      disable: true, // webpack@2.x and newer
-                    },
-                  },
-                ],
-              }
+            // {
+            //     include:SRC_DIR,
+            //     test: /\.(gif|png|jpe?g|svg)$/i,
+            //     use: [
+            //       'file-loader',
+            //       {
+            //         loader: 'image-webpack-loader',
+            //         options: {
+            //           bypassOnDebug: true, // webpack@1.x
+            //           disable: true, // webpack@2.x and newer
+            //         },
+            //       },
+            //     ],
+            //   }
         ]
     },
-    devtool: 'source-map'
+    //devtool: 'source-map'
 }
+
+module.exports = webpackConfig;
