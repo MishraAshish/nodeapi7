@@ -1,1 +1,3 @@
-/node_modules
+/NodeApi/node_modules
+/ReactApp/node_modules
+/dist

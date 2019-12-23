@@ -2,10 +2,9 @@ let express = require('express'),
 router = express.Router({caseSensitive:false}),
 userModel = require("./DataModel/UserModel");
 
-
 router.get("/createuser",(req, res)=>{
     console.log(req.query);
-
+    
     let objUserModel = new userModel(req.query);
 
     console.log(objUserModel);

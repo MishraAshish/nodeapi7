@@ -1,0 +1,6 @@
+Simply Easy Learning
+
+
+babel-core babel-loader babel-preset-es2015 babel-preset-react babel-preset-stage-2 
+css-loader image-webpack-loader style-loader
+webpack webpack-cli webpack-dev-server
