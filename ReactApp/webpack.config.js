@@ -69,10 +69,10 @@ webpackConfig = {
       devServer: {
         contentBase: __dirname,
         inline: false,
-        host: "local.synergiticit.com",
+        //host: "local.synergiticit.com",
         port:9092,
        // watchContentBase: true,
-        https: true,
+       // https: true,
     
         //for supporting history api fallback
         historyApiFallback: {
