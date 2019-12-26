@@ -54,8 +54,8 @@ webpackConfig = {
         minimizer: [
           new UglifyJSPlugin({
             test: /\.js(\?.*)?$/i,
-            include: /\/includes/,
-            exclude: /\/excludes/,
+            //include: /\/includes/,
+            //exclude: /\/excludes/,
             cache: true,
             sourceMap: true
           }),
@@ -77,8 +77,10 @@ webpackConfig = {
         //for supporting history api fallback
         historyApiFallback: {
           index: '/'
-        }
-      }
+        },
+        //compress: true
+      },
+      mode: 'production'
 }
 
 module.exports = webpackConfig;
