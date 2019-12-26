@@ -1,7 +1,8 @@
-let //webpack = require("webpack"),
+let webpack = require("webpack"),
 path = require("path"),
 DIST_DIR = path.resolve(__dirname,"dist"),
 SRC_DIR = path.resolve(__dirname,"src"),
+UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
 
 webpackConfig = {
     //entry point
@@ -49,7 +50,35 @@ webpackConfig = {
             //   }
         ]
     },
+    optimization: {
+        minimizer: [
+          new UglifyJSPlugin({
+            test: /\.js(\?.*)?$/i,
+            include: /\/includes/,
+            exclude: /\/excludes/,
+            cache: true,
+            sourceMap: true
+          }),
+        ],
+      },
     //devtool: 'source-map'
+    resolve: {
+        extensions: ['.js', '.jsx']
+      },
+      
+      devServer: {
+        contentBase: __dirname,
+        inline: false,
+        host: "local.synergiticit.com",
+        port:9092,
+       // watchContentBase: true,
+        https: true,
+    
+        //for supporting history api fallback
+        historyApiFallback: {
+          index: '/'
+        }
+      }
 }
 
 module.exports = webpackConfig;
