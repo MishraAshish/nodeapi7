@@ -1,7 +1,8 @@
-import React from "react";
+import React, {Component , PureComponent} from "react";
+import {Header} from "./CommonComponent/HeaderComponent";
 
 //export class App extends React.Component{
-export default class App extends React.Component{
+export default class App extends Component{
     constructor(props, context){
         super(props, context);
     }
@@ -9,6 +10,7 @@ export default class App extends React.Component{
     render(){
         return(
             <div>
+                <Header/>
                <h1> {"This is my first component"}</h1>
                <h1> {"This is my second data component"}</h1>
             </div>
@@ -16,7 +18,7 @@ export default class App extends React.Component{
     }
 } 
 
-export class App1 extends React.Component{
+export class App1 extends PureComponent{
     constructor(props, context){
         super(props, context);
     }
