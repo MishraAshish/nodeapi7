@@ -10,6 +10,7 @@ export class App extends React.Component{
         return(
             <div>
                <h1> {"This is my first component"}</h1>
+               <h1> {"This is my second data component"}</h1>
             </div>
         )    
     }

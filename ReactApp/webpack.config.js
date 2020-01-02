@@ -15,9 +15,7 @@ webpackConfig = {
         publicPath:"/app/"
     },
 
-    //loaders
-    //presets
-    //module configurations
+    //loaders, presets, module configurations
     module:{
         rules:[
             {
@@ -61,26 +59,26 @@ webpackConfig = {
           }),
         ],
       },
-    //devtool: 'source-map'
     resolve: {
         extensions: ['.js', '.jsx']
       },
       
-      devServer: {
-        contentBase: __dirname,
-        inline: false,
-        //host: "local.synergiticit.com",
-        port:9092,
-       // watchContentBase: true,
-       // https: true,
-    
-        //for supporting history api fallback
-        historyApiFallback: {
-          index: '/'
-        },
-        //compress: true
+    devServer: {
+      contentBase: __dirname,
+      inline: false,
+      //host: "local.synergiticit.com",
+      port:9092,
+      // watchContentBase: true,
+      // https: true,
+  
+      //for supporting history api fallback
+      historyApiFallback: {
+        index: '/'
       },
-      mode: 'production'
+      //compress: true
+    },
+    //devtool: 'source-map',
+    mode: 'production'
 }
 
 module.exports = webpackConfig;
