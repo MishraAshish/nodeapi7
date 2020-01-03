@@ -12,11 +12,13 @@ export default class App extends Component{
         return(
             <div>
                <Header>
-                    <b>{"This header is from app js"}</b>
-                    <b>{"This header is from app js"}</b>   
+                    <b>This header is from app js 0</b>
+                    <b>{"This header is from app js 1"}</b>   
                 </Header>
+
                <h1> {"This is my first component"}</h1>
                <h1> {"This is my second data component"}</h1>
+
                <Footer name={"synergisticit"}/>
             </div>
         )    

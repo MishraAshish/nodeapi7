@@ -5,6 +5,8 @@ export function Header(props) {
     return(
         <div>
             {props.children[0]}
+            <hr/>
+            {props.children[1]}
         </div>
     )
 }
