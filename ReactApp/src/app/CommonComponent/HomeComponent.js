@@ -11,11 +11,22 @@ export class Home extends React.Component{
         }
     }
 
+    UpdatName = (e) => {
+        console.log(e.target.value);
+        //this.state.Name = e.target.value; //wrong way
+        this.setState({
+            Name:e.target.value
+        });
+        //console.log("Updated Value- ", this.state.Name);
+    }
+
     render(){
+        console.log("Re- Render");
         return(
             <div>
-                {/* <input type="text" value={this.state.Name} onChange={this.UpdatName} /> */}
-                 <h2>{"My Name is : "+this.state.Name}</h2>
+                {this.props.Title ? <h1> {this.props.Title} </h1> : <h1>No Title Present</h1>}
+                <input type="text" value={this.state.Name} placeholder={"Please Type Name"} onChange={this.UpdatName}/>
+                 <h2 className={"H2Tag"}>{"My Name is : "+this.state.Name}</h2>
                  <h2>{"My Age is : "+this.state.Age}</h2>
                  <div>
                      <h2>{"Full Name : "}</h2><b>{this.state.FullName}</b>

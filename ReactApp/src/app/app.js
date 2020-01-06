@@ -7,7 +7,7 @@ import {Home} from "./CommonComponent/HomeComponent";
 export default class App extends Component{
     constructor(props, context){
         super(props, context);
-        this.title = "This is title coming from variable";
+        this.title = "This is title coming from parent variable";
 
     }
 
@@ -17,11 +17,7 @@ export default class App extends Component{
                <Header>
                     <div>This header is from app js 0</div>                       
                 </Header>
-
-               <div>
-                   {this.title}
-               </div>
-                <Home Name="Saranya" Age={25}/>
+                <Home Name="Saranya" Age={25} Title={this.title}/>
                <Footer name={"synergisticit"}/>
             </div>
         )    
