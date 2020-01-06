@@ -78,7 +78,7 @@ webpackConfig = {
       //compress: true
     },
     //devtool: 'source-map',
-    mode: 'production'
+    //mode: 'production'
 }
 
 module.exports = webpackConfig;

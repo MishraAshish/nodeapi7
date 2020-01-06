@@ -1,12 +1,11 @@
 import React,{PureComponent} from "react";
 
 export function Header(props) {
-    console.log(props.children[0]);
     return(
         <div>
-            {props.children[0]}
+            {props.children}
             <hr/>
-            {props.children[1]}
+            {/* {props.children[1]} */}
         </div>
     )
 }
