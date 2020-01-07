@@ -10,16 +10,24 @@ export class Home extends React.Component{
             FullName : "Jameel"
         }
         this.textInput = React.createRef(); //creating ref element : Needs to be avoided in actual use unless necessary
+        console.log("Component LC - Constructor");
     }
 
     componentWillMount(){
+        //View is not ready and has been removed from raect 16
+        console.log("Component LC - componentWillMount");
     }
 
     componentDidMount(){
-
+        console.log("Component LC - componentDidMount");
         //accessing the actual DOM using ref keyword
         this.textInput.current.focus();
         this.textInput.current.value = "Setting Up Reference Value";
+    }
+
+    componentWillUnmount(){
+        //Called once component is switched
+        console.log("Component Will Unmount");
     }
 
     CallBack = ()=>{
