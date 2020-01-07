@@ -9,15 +9,27 @@ export class Home extends React.Component{
             Age : props.Age,
             FullName : "Jameel"
         }
+        this.textInput = React.createRef(); //creating ref element : Needs to be avoided in actual use unless necessary
+    }
+
+    componentWillMount(){
+    }
+
+    componentDidMount(){
+
+        //accessing the actual DOM using ref keyword
+        this.textInput.current.focus();
+        this.textInput.current.value = "Setting Up Reference Value";
     }
 
     UpdatName = (e) => {
         console.log(e.target.value);
-        //this.state.Name = e.target.value; //wrong way
+        this.state.Name = e.target.value; //wrong way
         this.setState({
             Name:e.target.value
         });
         //console.log("Updated Value- ", this.state.Name);
+        //this.forceUpdate();//Avoid Using it, because it call render directly skipping your lifecycle methods
     }
 
     render(){
@@ -31,9 +43,10 @@ export class Home extends React.Component{
                  <div>
                      <h2>{"Full Name : "}</h2><b>{this.state.FullName}</b>
                  </div>
-                 {/* <button id={"TestButton"} onClick={this.UpdateAge}>{"UpdateAge"}</button> */}
+                 <button id="UpdateHien" onClick={()=>this.props.UpdateTitle(this.state.Name, this.state.Age)}>Update Title</button>
                  <hr/>
-                 {/* <input type="text" ref={this.textInput} /> */}
+                 
+                 <input type="text" ref={this.textInput} />
             </div>
         )
     }
