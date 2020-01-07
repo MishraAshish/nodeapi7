@@ -22,12 +22,14 @@ export class Home extends React.Component{
         this.textInput.current.value = "Setting Up Reference Value";
     }
 
+    CallBack = ()=>{
+        console.log("Set State Callback");
+    }
+
     UpdatName = (e) => {
         console.log(e.target.value);
         this.state.Name = e.target.value; //wrong way
-        this.setState({
-            Name:e.target.value
-        });
+        this.setState({Name:e.target.value}, this.CallBack);
         //console.log("Updated Value- ", this.state.Name);
         //this.forceUpdate();//Avoid Using it, because it call render directly skipping your lifecycle methods
     }
