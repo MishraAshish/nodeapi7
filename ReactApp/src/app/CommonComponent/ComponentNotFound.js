@@ -3,8 +3,8 @@ import React from "react";
 //Functional component doesn't inherit from React.Component
 export default function NotFound(props) {
     return(
-        <div>
+        <React.Fragment>
             <h1>Requested Page Not Found</h1>
-        </div>
+        </React.Fragment>
     )
 }
