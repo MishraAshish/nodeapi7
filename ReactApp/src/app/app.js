@@ -8,13 +8,15 @@ export default class App extends Component{
     constructor(props, context){
         super(props, context);
         this.state = {
-            title : "This is title coming from parent variable"
+            title : "This is title coming from parent variable",
+            Age:25
         }
     }
 
     UpdateTitle =(newValue, age)=>{
         this.setState({
-            title : this.state.title + " "+ newValue +" "+age
+            title : this.state.title + " "+ newValue +" "+age,
+            Age:40
         })
         console.log("Parent Method - " +this.title);
     }
@@ -27,7 +29,7 @@ export default class App extends Component{
                     <div>This header is from app js 0</div>                       
                 </Header>
                 
-                <Home Name="Saranya" Age={25} Title={this.state.title} UpdateTitle={this.UpdateTitle}/>
+                <Home Name="Saranya" Age={this.state.Age} Title={this.state.title} UpdateTitle={this.UpdateTitle}/>
 
                <Footer name={"synergisticit"}/>
             </div>

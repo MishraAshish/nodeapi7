@@ -13,10 +13,10 @@ export class Home extends React.Component{
         console.log("Component LC - Constructor");
     }
 
-    componentWillMount(){
-        //View is not ready and has been removed from raect 16
-        console.log("Component LC - componentWillMount");
-    }
+    // componentWillMount(){
+    //     //View is not ready and has been removed from raect 16
+    //     console.log("Component LC - componentWillMount");
+    // }
 
     componentDidMount(){
         console.log("Component LC - componentDidMount");
@@ -40,6 +40,33 @@ export class Home extends React.Component{
         this.setState({Name:e.target.value}, this.CallBack);
         //console.log("Updated Value- ", this.state.Name);
         //this.forceUpdate();//Avoid Using it, because it call render directly skipping your lifecycle methods
+    }
+
+    //Update Life Cycle Method
+
+    // componentWillReceiveProp(nextProps){
+    //     console.log("componentWillReceiveProps -", nextProps);
+    // }
+
+    // getDerivedStateFromProps(nextProps){
+    //     console.log("getDerivedStateFromProps -", nextProps);
+    // }
+
+    // shouldComponentUpdate(nextProps, nextState){
+    //     console.log("shouldComponentUpdate -", nextProps, nextState);
+    //     if (nextProps.Age > 25) {
+    //         return true;
+    //     }else
+    //         return false;
+    // }
+
+    // getSnapshotBeforeUpdate(prevState){
+    //     console.log("getSnapshotBeforeUpdate ",prevState);
+    //     return prevState;
+    // }
+    
+    componentDidUpdate(prevState, prevProps){
+        console.log("componentDidUpdate -", prevState, prevProps);
     }
 
     render(){
