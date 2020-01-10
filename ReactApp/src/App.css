@@ -328,6 +328,16 @@ optgroup {
   font-weight: bold; }
 
 /*Custom css our own*/
+.about{
+  text-align: center;
+  font-weight: bold;
+  
+  background-color: palegoldenrod;
+}
+.about-content{
+  text-align: center;
+  font-style: italic;
+}
 .footer{
   color: #fff;
   font-size: 13px;

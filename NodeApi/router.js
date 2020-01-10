@@ -1,6 +1,35 @@
 let express = require('express'),
 router = express.Router({caseSensitive:false}),
-userModel = require("./DataModel/UserModel");
+userModel = require("./DataModel/UserModel"),
+signInModel = require("./DataModel/SignInUserModel");
+
+router.post('/api/signInUpUser',(req, res) =>{ //RESTFul ness of API : CRUD: Create(Post) Read(Get) Update(Post/Put/Patch) Delete(Delete)
+    //console.log("Body ", req.body);
+    let signObjForMongo = new signInModel({
+      firstName: req.body.firstName,
+      password: req.body.password,
+      street: req.body.street,
+      cellPhone : req.body.cellPhone
+    });
+  
+    signInModel.findOne({firstName: req.body.firstName}, (err, signinuser) => {
+          if (err){
+              //console.log("got an error!");            
+              res.send(err);
+          }
+          if (!signinuser) {
+            //console.log("No Student Present, Adding!"); 
+            signObjForMongo.save((err, data, next)=>{        
+              if (err) {
+                  res.send("Error Occurred"+ err);
+              }      
+              res.json(data);
+            });
+          }else{
+            res.json(signinuser);
+          }
+    });  
+});
 
 router.get("/createuser",(req, res)=>{
     console.log(req.query);
