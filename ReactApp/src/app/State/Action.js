@@ -12,6 +12,7 @@ export const loading = (loading) => ({
     }
 });
 
+//ajax: asynchronous javascript and xml
 export const signInUpUser = (user) => {
     console.log('entering signin signup user');
 
