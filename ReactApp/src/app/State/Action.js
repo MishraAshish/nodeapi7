@@ -43,3 +43,27 @@ export const signInUpUser = (user) => {
         })
     }
 }
+
+export const addProductAction = (product) => {
+    console.log('adding the product on add click');
+    return function(dispatch, getState) {
+        dispatch(loading(true));
+        window.fetch("http://localhost:9090/api/addProduct",{//uri
+            method: 'POST', //rest method type 
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(product)})//req.body.firstname,req.body.password...
+        .then (response => response.json())
+        .then (productresp => {
+            console.log("response ", productresp);
+            // let action = addUser(userresp);
+            // dispatch(action);
+            // dispatch(loading(false));            
+        })
+        .catch((err)=>{
+            console.log("Error While Login", err)
+        })
+    }
+}

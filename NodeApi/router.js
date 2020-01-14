@@ -1,7 +1,8 @@
 let express = require('express'),
 router = express.Router({caseSensitive:false}),
 userModel = require("./DataModel/UserModel"),
-signInModel = require("./DataModel/SignInUserModel");
+signInModel = require("./DataModel/SignInUserModel"),
+productModel = require("./DataModel/ProductModel");
 
 //RESTFul ness of API : CRUD: Create(Post) Read(Get) Update(Post/Put/Patch) Delete(Delete) 
 router.post('/api/signInUpUser',(req, res) =>{    
@@ -29,6 +30,24 @@ router.post('/api/signInUpUser',(req, res) =>{
             res.json(signinuser);
           }
     });  
+});
+
+router.post('/api/addProduct',(req, res) =>{    
+        console.log("Body ", req.body);
+        let productObj = new productModel({
+            productName:req.body.productName,
+            productPrice:req.body.productPrice,
+            camera:req.body.camera,
+            ram:req.body.ram,
+            display:req.body.display,
+            color:req.body.color
+        });
+        productObj.save((err, data, next)=>{        
+            if (err) {
+                res.send("Error Occurred"+ err);
+            }      
+            res.json(data);
+        });
 });
 
 router.get("/createuser",(req, res)=>{

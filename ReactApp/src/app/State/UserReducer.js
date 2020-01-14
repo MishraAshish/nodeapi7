@@ -18,6 +18,7 @@ export default function userReducer(state=INITIAL_STATE, action) {
     switch(action.type) {
         case ActionTypes.ADDUSER_USER: 
             console.log("Payload Address", action.payload.user)
+            //...state = {user:user,trainingProduct:trainingProduct}
             return {...state, user: action.payload.user} 
         case "LOADING":
             return {...state, loading: action.payload.loading}

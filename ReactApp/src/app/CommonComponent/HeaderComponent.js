@@ -6,6 +6,7 @@ export function Header(props) {
            <div className="col-md-12">
                 <NavLink to="/Home" exact className="button" activeClassName="success" >Home </NavLink> 
                 <NavLink to="/product" className="button" activeStyle={{ color:'white'}} activeClassName="success" >Products  </NavLink>
+                <NavLink to="/createProduct" className="button" activeStyle={{ color:'white'}} activeClassName="success" >Add Product </NavLink>
                 <NavLink to="/cart" className="button" activeStyle={{ color:'white'}} activeClassName="success" >Cart  </NavLink>               
                 <NavLink to="/checkout" className="button" activeStyle={{ color:'white'}} activeClassName="success" >Checkout  </NavLink>                                    
                 <NavLink to="/User" className="button" activeStyle={{ color:'white'}} activeClassName="success" >Admin  </NavLink>

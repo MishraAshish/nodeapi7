@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import "../App.css";
 import NotFound from "./CommonComponent/ComponentNotFound";
 import User from "./CartApplication/Container/User/UserContainer";
+import AddProduct from "./CartApplication/Container/Product/ProductContainer";
 
 //export class App extends React.Component{
 export default class App extends Component{
@@ -34,6 +35,7 @@ export default class App extends Component{
                 <Switch>
                     <Route path="/Home" exact component={Home} />
                     <Route path="/User" component={User} />
+                    <Route path="/createProduct" component={AddProduct} />
                     <Route path="/About" exact component={About} />
                     <Route path="*" component={NotFound} />
                 </Switch>
