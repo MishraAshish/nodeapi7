@@ -8,6 +8,7 @@ import "../App.css";
 import NotFound from "./CommonComponent/ComponentNotFound";
 import User from "./CartApplication/Container/User/UserContainer";
 import AddProduct from "./CartApplication/Container/Product/ProductContainer";
+import ShowProduct from "./CartApplication/Container/Product/ShowProductContainer";
 
 //export class App extends React.Component{
 export default class App extends Component{
@@ -34,9 +35,11 @@ export default class App extends Component{
                 <Header />
                 <Switch>
                     <Route path="/Home" exact component={Home} />
+                    <Route path="/Product" exact component={ShowProduct} />
                     <Route path="/User" component={User} />
                     <Route path="/createProduct" component={AddProduct} />
                     <Route path="/About" exact component={About} />
+                    <Route path="/" exact component={Home} />
                     <Route path="*" component={NotFound} />
                 </Switch>
                 <Footer name={"synergisticit"} />

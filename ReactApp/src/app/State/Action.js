@@ -12,6 +12,29 @@ export const loading = (loading) => ({
     }
 });
 
+//dispatching to product reducer using promise
+export const GetProducts = (products) => ({    
+    type : ActionTypes.GET_PRODUCTS,
+    payload: {
+            promise: new Promise((resolve, reject) => { 
+                fetch("http://localhost:9090/api/getProducts", {
+                    method: 'GET'
+                }).then(                
+                    response => response.json(),
+                    error => console.log('An error occurred.', error)
+                ).then(json => {
+                    // want to updatePath for the route here:
+                    //dispatch(updatePath('/'));
+                    resolve(json)
+                })
+                .catch(error => {
+                    reject(error);
+                    //dispatch(error); -- promise Issue                        
+                })
+            })
+        }       
+});
+
 //ajax: asynchronous javascript and xml
 export const signInUpUser = (user) => {
     console.log('entering signin signup user');

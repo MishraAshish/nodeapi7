@@ -50,6 +50,16 @@ router.post('/api/addProduct',(req, res) =>{
         });
 });
 
+router.get('/api/getProducts',(req, res) =>{    
+    productModel.find((err, data, next) =>{
+        console.log("Data :", err);
+        err ? res.send({"erro": err}) :
+        res.send(
+            data
+        )
+    }) 
+});
+
 router.get("/createuser",(req, res)=>{
     console.log(req.query);
     
@@ -85,7 +95,7 @@ router.get('/hellostudents', function (req, res) //Creating an api
     //fs = create the write stream and save the data
     var path = "output.json";
     fs.stat(path, function(err, stat) {
-        console.log("Test", err);
+        console.log("Test", err); 
         if(err == null) {
             fs.appendFile('output.json'," ,"+JSON.stringify({
             user:req.query,
