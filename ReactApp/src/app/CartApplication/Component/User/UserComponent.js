@@ -12,6 +12,16 @@ export default class User extends React.Component{
         }
     }
 
+    componentWillReceiveProps(nextProps, nextState){
+        console.log("next props", nextProps);
+        this.setState({
+            firstName: nextProps.user.firstName,
+            password: nextProps.user.password,
+            street: nextProps.user.street,
+            cellPhone: nextProps.user.cellPhone
+        })
+    }
+
     onChangeText = (e)=>{
         // target is input element, real dom element
         let target = e.target;

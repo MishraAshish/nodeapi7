@@ -58,7 +58,7 @@ export const signInUpUser = (user) => {
             console.log("response ", userresp);
             let action = addUser(userresp);
             dispatch(action);
-            dispatch(loading(false));
+            //dispatch(loading(false));
             ///dispatch(getCartItems(userresp._id))
         })
         .catch((err)=>{
