@@ -3,6 +3,7 @@ import promise from "redux-promise-middleware"; //make aync call to api
 import thunk from 'redux-thunk';//make aync call to api
 import user from "./app/State/UserReducer";
 import product from "./app/State/ProductReducer";
+//import cart from "./app/State/ProductReducer";
 
 const myLogger = () => (next) => (action) => {    
     console.log("Logged Action", action);
@@ -14,6 +15,7 @@ export default createStore(
         {
             user,
             product
+            //cart
         }),//we need to combine multiple reducers
     {},
     applyMiddleware(myLogger, promise, thunk)    

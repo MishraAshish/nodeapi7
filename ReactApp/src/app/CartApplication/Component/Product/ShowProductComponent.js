@@ -3,7 +3,9 @@ import ShowProductDetails from "../../Component/Product/ShowProductDetailsCompon
 export default class ShowProduct extends React.Component{
 
     componentDidMount() {
-        this.props.fetchProducts();
+        if (this.props.products.length<=1) {
+            this.props.fetchProducts();    
+        }        
     }
 
     render(){

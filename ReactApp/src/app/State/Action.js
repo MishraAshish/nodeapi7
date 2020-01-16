@@ -13,7 +13,7 @@ export const loading = (loading) => ({
 });
 
 //dispatching to product reducer using promise
-export const GetProducts = (products) => ({    
+export const GetProducts = () => ({    
     type : ActionTypes.GET_PRODUCTS,
     payload: {
             promise: new Promise((resolve, reject) => { 
@@ -81,9 +81,8 @@ export const addProductAction = (product) => {
         .then (response => response.json())
         .then (productresp => {
             console.log("response ", productresp);
-            // let action = addUser(userresp);
-            // dispatch(action);
-            // dispatch(loading(false));            
+            dispatch(GetProducts());
+            dispatch(loading(false));            
         })
         .catch((err)=>{
             console.log("Error While Login", err)

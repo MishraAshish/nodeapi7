@@ -1,7 +1,8 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-
+//import connect
 export function Header(props) {
+    //read user from props his name and then create two set of links
     return(
            <div className="col-md-12">
                 <NavLink to="/Home" exact className="button" activeClassName="success" >Home </NavLink> 
@@ -15,3 +16,5 @@ export function Header(props) {
             </div>
     )
 }
+
+//implement map state to props
