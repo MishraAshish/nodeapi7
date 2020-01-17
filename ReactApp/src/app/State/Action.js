@@ -12,6 +12,11 @@ export const loading = (loading) => ({
     }
 });
 
+export const addCoupon = (coupon) => ({        
+    type: ActionTypes.ADD_COUPON,
+    payload: coupon
+});
+
 //dispatching to product reducer using promise
 export const GetProducts = () => ({    
     type : ActionTypes.GET_PRODUCTS,
