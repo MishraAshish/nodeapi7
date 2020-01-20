@@ -5,7 +5,8 @@ export class Coupon extends React.Component{
     constructor(props, context){
         super(props, context);
         this.state = {
-            coupon: props.coupon
+            coupon: props.coupon,
+            firstName: props.user.firstName
         }
     }
 
@@ -26,7 +27,7 @@ export class Coupon extends React.Component{
             <section className={"componentClass"}>
                 <div className="form col-md-8">
                     <div className="col-md-12">
-                        <b>Hi, User Name</b>
+                        <b>Hi, {this.state.firstName != "" ? this.state.firstName: "Tom"}</b>
                         <p>Your Generated Coupon is : </p>
                         <b>{this.state.coupon}</b>
                     </div>

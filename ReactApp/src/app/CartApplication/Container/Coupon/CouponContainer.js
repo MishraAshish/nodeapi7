@@ -6,7 +6,8 @@ import {addCoupon} from "../../../State/Action";
 //subcribing and reading state(data) as props from store(reducers)
 const mapStateToProps = (state) => {
     return{
-        coupon:state.coupon.coupon
+        coupon:state.coupon.coupon,
+        user: state.user.user
     }
 }
 //publishing and wrinting state(data) to store(reducers) through props
