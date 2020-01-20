@@ -64,7 +64,7 @@ export const signInUpUser = (user) => {
             let action = addUser(userresp);
             dispatch(action);
             //dispatch(loading(false));
-            ///dispatch(getCartItems(userresp._id))
+            dispatch(getCartItems(userresp._id))
         })
         .catch((err)=>{
             console.log("Error While Login", err)
@@ -93,4 +93,61 @@ export const addProductAction = (product) => {
             console.log("Error While Login", err)
         })
     }
+}
+
+//cart component actions
+export const empty = () => ({
+    type: ActionTypes.EMPTY_CART
+});
+
+export const addItem = (item) => ({
+    type: ActionTypes.ADD_ITEM,
+    payload: {
+        item
+    }
+});
+
+export const saveCartItems = (Items, userid) => {
+    console.log("Items To Be Saved", Items);   
+
+    window.fetch("http://localhost:9090/api/saveUserCart",{
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({userid:userid, items:Items})})
+    .then (response => response.json())
+    .then (cartresponse => {
+        console.log("response ", cartresponse);
+    })
+    .catch((err)=>{
+        console.log("Error While Saving Cart", err);
+    })        
+}
+
+export const getCartItems = (userid) => {
+    return function(dispatch, getState) {
+        console.log("Get List Of items");
+        window.fetch("http://localhost:9090/api/getUserCart",{
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({userid:userid})})
+        .then (response => response.json())
+        .then (cartresponse => {
+            console.log("response ", cartresponse);
+            for (const item of cartresponse.cart) {
+                console.log("item in for of", item);
+                let action = addItem(item);
+                dispatch(action);    
+            }
+            
+        })
+        .catch((err)=>{
+            console.log("Error While Login", err)
+        })  
+    }       
 }

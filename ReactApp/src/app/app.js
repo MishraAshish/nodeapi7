@@ -10,6 +10,7 @@ import User from "./CartApplication/Container/User/UserContainer";
 import AddProduct from "./CartApplication/Container/Product/ProductContainer";
 import ShowProduct from "./CartApplication/Container/Product/ShowProductContainer";
 import Coupon from "./CartApplication/Container/Coupon/CouponContainer";
+import Cart from "./CartApplication/Container/Cart/CartContainer";
 
 //export class App extends React.Component{
 export default class App extends Component{
@@ -37,8 +38,9 @@ export default class App extends Component{
                 <Switch>
                     <Route path="/Home" exact component={Home} />
                     <Route path="/Product" exact component={ShowProduct} />
-                    <Route path="/User" component={User} />
                     <Route path="/createProduct" component={AddProduct} />
+                    <Route path="/Cart" exact component={Cart} />
+                    <Route path="/User" component={User} />
                     <Route path="/About" exact component={About} />
                     <Route path="/Counter" exact component={Coupon} />
                     <Route path="/" exact component={Home} />

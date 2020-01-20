@@ -2,7 +2,8 @@ let express = require('express'),
 router = express.Router({caseSensitive:false}),
 userModel = require("./DataModel/UserModel"),
 signInModel = require("./DataModel/SignInUserModel"),
-productModel = require("./DataModel/ProductModel");
+productModel = require("./DataModel/ProductModel"),
+cartModel = require("./DataModel/CartModel");
 
 //RESTFul ness of API : CRUD: Create(Post) Read(Get) Update(Post/Put/Patch) Delete(Delete) 
 router.post('/api/signInUpUser',(req, res) =>{    
@@ -59,6 +60,54 @@ router.get('/api/getProducts',(req, res) =>{
         )
     }) 
 });
+
+//cart item update api's
+router.post('/api/saveUserCart',(req, res) =>{
+    console.log("Body ", req.body);
+    let cartObj = new cartModel({
+      userid: req.body.userid,
+      cart: req.body.items
+    });
+    cartModel.findOne({userid: req.body.userid},(err, cartitems) => {
+          console.log("We Found One - ",cartitems);
+          if (err){
+              console.log("got an error!");            
+              res.send(err);
+          }
+          if (!cartitems) {
+            console.log("No cartitems Present, Adding!"); 
+            cartObj.save((err, data, next)=>{        
+              if (err) {
+                  res.send("Error Occurred"+ err);
+              }      
+              res.json(data);
+            });
+          }else{
+            console.log("No Student Present, Replacing!");
+            cartitems.cart = req.body.items
+            cartitems.save((err, data, next)=>{        
+              if (err) {
+                  res.send("Error Occurred"+ err);
+              }      
+              res.json(data);
+            });
+          }
+    });
+  })
+  
+router.post('/api/getUserCart',(req, res) =>{
+    console.log("Body ", req.body);
+    // let cartObj = new cartModel({
+    //   userid: req.body.userid
+    // });
+    cartModel.findOne({userid: req.body.userid},(err, cart) => {         
+      if (err) {
+          res.send("Error Occurred"+ err);
+      }      
+      res.json(cart);
+    });  
+});
+  
 
 router.get("/createuser",(req, res)=>{
     console.log(req.query);
