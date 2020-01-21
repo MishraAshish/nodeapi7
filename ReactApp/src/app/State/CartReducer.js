@@ -17,9 +17,18 @@ export default function CartReducer(state = INITIAL_STATE, action) {
             return []
 
         //update the cart item
+        case ActionTypes.UPDATE_ITEM:
+            return state.map (item => {
+                if (item.id != action.payload.id)
+                    return item;                
+                // item to update
+                return {...item, qty: action.payload.qty}
+            })
 
         //delete cart item
-
+        case ActionTypes.REMOVE_ITEM: 
+            return state.filter(item => item.id != action.payload.id)
+            
         //return basic intial state
         default:
             return state;

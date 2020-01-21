@@ -107,6 +107,21 @@ export const addItem = (item) => ({
     }
 });
 
+export const updateItem = (id, qty) => ({
+    type: ActionTypes.UPDATE_ITEM,
+    payload: {
+        id,
+        qty: parseInt(qty)
+    }
+});
+
+export const removeItem = (id) => ({
+    type: ActionTypes.REMOVE_ITEM,
+    payload: {
+        id
+    }
+});
+
 export const saveCartItems = (Items, userid) => {
     console.log("Items To Be Saved", Items);   
 
