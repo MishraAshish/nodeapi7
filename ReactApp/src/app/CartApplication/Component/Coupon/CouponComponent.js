@@ -1,4 +1,5 @@
 import React from 'react';
+import FunctionState from '../../../CommonComponent/ReactHooks';
 
 export class Coupon extends React.Component{
     //Creating the view with user interaction
@@ -32,8 +33,8 @@ export class Coupon extends React.Component{
                         <b>{this.state.coupon}</b>
                     </div>
                     <input type="button" className={"btn btn-primary col-md-2"} value={"Generate"} onClick={this.addCoupon}/>
+                    <FunctionState/>
                 </div>
-
             </section>
         )
     }
