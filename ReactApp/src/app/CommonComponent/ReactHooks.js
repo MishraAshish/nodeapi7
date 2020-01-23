@@ -15,14 +15,25 @@ const FunctionState = () => {
     // }
 
     const [couponNumber, setCoupon] = useState(2020);
+    const [userName, setName] = useState({Name:"Ashish"});
 
     const generateCoupon = () => {
         setCoupon(couponNumber + Math.ceil(Math.random()*10000))
     }
 
-    return <button onClick={generateCoupon}>
+    const changeName = () => {
+        setName({Name : userName.Name + " 25"});
+    }
+
+    return (
+    <div>
+        <button onClick={generateCoupon}>
         Your generated coupon is {couponNumber}
     </button>
+    <button onClick={changeName}>
+        Your name is {userName.Name}
+    </button>
+    </div>)
 }
 
 export default FunctionState;

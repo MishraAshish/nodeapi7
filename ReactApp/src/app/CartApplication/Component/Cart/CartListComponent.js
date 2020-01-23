@@ -18,7 +18,7 @@ export default function CartList(props) {
                     <th>Price</th>
                     <th>Qty</th>
                     <th>Total</th>
-                    <th>Remove</th>
+                    {!props.donotshowInputBox ?<th>Remove/Edit</th>:""}
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +26,7 @@ export default function CartList(props) {
                 items.map (item => (
                     <CartItem item={item}
                               key={item.id}
+                              donotshowInputBox={props.donotshowInputBox}
                     />
                 ))
             }        

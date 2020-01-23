@@ -38,21 +38,23 @@ export default class CartItem extends Component{
                    <p ref="discount"> </p>
                 </td>
                 <td>
-                <input value={this.state.qty} 
+                {!this.props.donotshowInputBox ? <input value={this.state.qty} 
                         type="number"
                         onChange={this.onChangeText}
                         ref = {(elem) => this.inputElem = elem}
-                    />   
+                    />   : this.state.qty}
                 </td> 
                 <td> {item.price * item.qty} </td>
-                <td>
-                    <button onClick={() => this.props.actions.updateItem(item.id, this.state.qty)}>
-                        Update
-                    </button>
-                    <button onClick={() => this.props.actions.removeItem(item.id)}>
-                        Remove
-                    </button>
-                </td>
+                {!this.props.donotshowInputBox ?
+                    <td>
+                        <button onClick={() => this.props.actions.updateItem(item.id, this.state.qty)}>
+                            Update
+                        </button>
+                        <button onClick={() => this.props.actions.removeItem(item.id)}>
+                            Remove
+                        </button>
+                    </td>:""
+                }
             </tr>
         )
     }
