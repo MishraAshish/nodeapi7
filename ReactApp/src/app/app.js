@@ -12,6 +12,7 @@ import ShowProduct from "./CartApplication/Container/Product/ShowProductContaine
 import Coupon from "./CartApplication/Container/Coupon/CouponContainer";
 import Cart from "./CartApplication/Container/Cart/CartContainer";
 import Checkout from "./CartApplication/Container/Checkout/CheckoutContainer";
+import {AtmDispenser} from "./CommonComponent/AtmDispenser";
 
 //export class App extends React.Component{
 export default class App extends Component{
@@ -45,6 +46,7 @@ export default class App extends Component{
                     <Route path="/About" exact component={About} />
                     <Route path="/Counter" exact component={Coupon} />
                     <Route path="/Checkout" exact component={Checkout} />
+                    <Route path="/atm" exact component={AtmDispenser} />
                     <Route path="/" exact component={Home} />
                     <Route path="*" component={NotFound} />
                 </Switch>
