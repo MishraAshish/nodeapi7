@@ -6,13 +6,34 @@ import {About} from "./CommonComponent/AboutComponent";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import "../App.css";
 import NotFound from "./CommonComponent/ComponentNotFound";
-import User from "./CartApplication/Container/User/UserContainer";
-import AddProduct from "./CartApplication/Container/Product/ProductContainer";
+//import User from "./CartApplication/Container/User/UserContainer";
+//import AddProduct from "./CartApplication/Container/Product/ProductContainer";
 import ShowProduct from "./CartApplication/Container/Product/ShowProductContainer";
 import Coupon from "./CartApplication/Container/Coupon/CouponContainer";
 import Cart from "./CartApplication/Container/Cart/CartContainer";
 import Checkout from "./CartApplication/Container/Checkout/CheckoutContainer";
 import {AtmDispenser} from "./CommonComponent/AtmDispenser";
+import Loadable from "react-loadable"; //allows lazy loading
+
+// functional component, used as placeholder
+//when lazy loaded modules delayed
+function Loading() {
+    return (
+        <div>
+            Loading ...
+        </div>
+    )
+}
+
+const User = Loadable({
+    loader: () => import('./CartApplication/Container/User/UserContainer'),
+    loading: Loading,
+});
+
+const AddProduct = Loadable({
+    loader: () => import('./CartApplication/Container/Product/ProductContainer'),
+    loading: Loading,
+});
 
 //export class App extends React.Component{
 export default class App extends Component{
