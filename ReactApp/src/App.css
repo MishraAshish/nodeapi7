@@ -507,6 +507,13 @@ i[class^="icon-"]:before,
 i[class*=" icon-"]:before {
   margin: 0; }
 
+.saveUser{
+  max-width: 25%;
+}
+[aria-current] {
+  border: 1px solid red!important;
+  background-color: peru!important;
+}
 .label, [data-tooltip]:after, button,
 .button,
 [type=submit], .dropimage {

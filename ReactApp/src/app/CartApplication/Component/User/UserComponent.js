@@ -92,7 +92,7 @@ export default class User extends React.Component{
                             onChange={this.onChangeText} />
                     </div>
                     
-                    <input type="button" className={"btn btn-primary col-md-2"} value={"SignIn/Up"} onClick={this.AddUser}/>
+                    <input type="button" className={"btn btn-primary col-md-2 saveUser"} value={"SignIn-Up"} onClick={this.AddUser}/>
                 </div>
 
             </section>
