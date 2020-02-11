@@ -9,9 +9,11 @@ import { Component, Input } from '@angular/core';
 export class CartComponent {
     title = 'cart-app-component';
     heading = 'Cart Component application';
-    
+
     @Input() cartType : string;
     @Input() cartAmount :  string;
+    @Input() userName : string;
+
 
     constructor(){
         console.log("cartType "+ this.cartType);
