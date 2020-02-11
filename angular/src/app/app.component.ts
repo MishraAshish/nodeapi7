@@ -7,6 +7,15 @@ import { CartComponent } from "./cart.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-app';
-  heading = 'Angular Cart application';
+  title:string;
+  heading:string = 'Angular Cart application';
+  cartTypeParent = 'Shopping Cart';
+  cartAmountParent = '10000';
+
+  constructor(){
+    this.title = "Angular Application Title";
+  }
+
+  
+
 }
