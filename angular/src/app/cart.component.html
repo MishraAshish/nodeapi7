@@ -1,5 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="childComponent">
+  <br/>
+  {{title}} {{total}}
   <table>
     <thead>
       <th>Product Name</th>
@@ -14,11 +16,13 @@
   </table>
 
   <input type="button" (click)="sayHello('Hello Trainees')" value="Say Hello" />
+  
   <div class="cartFromParent">
     <b>{{cartType}}</b>
     <br/>
     <b>{{cartAmount}}</b>
     <br/>
     <b>{{userName}}</b>
+
   </div>
 </div>

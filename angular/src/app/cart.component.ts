@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 
 export class CartComponent {
-    title = 'cart-app-component';
-    heading = 'Cart Component application';
+    title:string = 'Cart Component application';
+    total:number = 100000;
 
     @Input() cartType : string;
     @Input() cartAmount :  string;
@@ -26,7 +26,7 @@ export class CartComponent {
     }
 
     sayHello(msg){
-        alert("I am saying - "+ msg);
+        alert("I am saying - "+ msg +" "+ this.userName);
     }
 
     logIt(msg: string, nextId: number) {

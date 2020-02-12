@@ -12,6 +12,12 @@ export default class User extends React.Component{
         }
     }
 
+    componentDidMount(){
+        // this.setState({
+        //     country: window.gapi.getcountry()
+        // })
+    }
+
     componentWillReceiveProps(nextProps, nextState){
         console.log("next props", nextProps);
         this.setState({

@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div style="text-align:center" class="parentClass">
   <h1>
     Welcome to {{title}}!
   </h1>
@@ -9,5 +9,7 @@
 
   <button (click)="passUserName()">SendUserName</button>
 
-  <cart-app [cartType]="cartTypeParent" [cartAmount]="cartAmountParent" [userName]="userNameParent"></cart-app>
+  <cart-app [cartType]="cartTypeParent" [cartAmount]="cartAmountParent" [userName]="userNameParent">
+    
+  </cart-app>
 </div>

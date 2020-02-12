@@ -28,8 +28,8 @@ export class AppComponent {
 
   passUserName(){
     //debugger;
-    this.userNameParent = this.userName;
-    //this.userNameParent = (document.getElementById("username") as HTMLInputElement).value;
+    //this.userNameParent = this.userName;
+    this.userNameParent = (document.getElementById("username") as HTMLInputElement).value;
   }
 
 }
