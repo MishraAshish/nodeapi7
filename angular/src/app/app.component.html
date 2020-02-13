@@ -8,8 +8,16 @@
   <input type="text" id="username" value={{userName}} (keyup)="nameChange($event)" />
 
   <button (click)="passUserName()">SendUserName</button>
+  <br/>
+  <label>{{userNameFromChild}}</label>
+  <b>{{message}}</b>
 
-  <cart-app [cartType]="cartTypeParent" [cartAmount]="cartAmountParent" [userName]="userNameParent">
-    
+  <cart-app 
+    [cartType]="cartTypeParent" 
+    [cartAmount]="cartAmountParent" 
+    [userName]="userNameParent">    
   </cart-app>
+
+  <user-child (messageEvent)="receiveMesssage($event)" ></user-child>
+  
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'cart-app',
@@ -14,6 +14,7 @@ export class CartComponent {
     @Input() cartAmount :  string;
     @Input() userName : string;
 
+    //@Output() message :string;
 
     constructor(){
         console.log("cartType "+ this.cartType);
@@ -25,8 +26,9 @@ export class CartComponent {
         console.log("New Vaalue" + this.cartType)
     }
 
-    sayHello(msg){
+    sayHello(msg:string):void{
         alert("I am saying - "+ msg +" "+ this.userName);
+        //return "";
     }
 
     logIt(msg: string, nextId: number) {
