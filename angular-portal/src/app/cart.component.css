@@ -1,0 +1,10 @@
+.cartFromParent {
+    border: 1px solid red;
+    margin-top: 25;
+    height: 80px;
+    width: 200px;
+}
+
+.childComponent{
+    border: 1px solid green;
+}

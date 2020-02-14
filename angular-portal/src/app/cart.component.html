@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="childComponent">
+  <br/>
+  {{title}} {{total}}
+  <table>
+    <thead>
+      <th>Product Name</th>
+      <th>Product Price</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Air Conditionar</td>
+        <td>50000</td>
+      </tr>
+    </tbody>    
+  </table>
+
+  <input type="button" (click)="sayHello('Hello Trainees')" value="Say Hello" />
+  
+  <div class="cartFromParent">
+    <b>{{cartType}}</b>
+    <br/>
+    <b>{{cartAmount}}</b>
+    <br/>
+    <b>{{userName}}</b>
+    <br/>
+    <b>{{message}}</b>
+  </div>
+</div>
