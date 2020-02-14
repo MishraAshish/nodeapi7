@@ -10,6 +10,8 @@ import {DataService} from "./data.services";
 
             <br/>
             {{mymessage}}
+            <br/>
+            <button (click)="newMessage()" class="button">New Message From User Component</button>
         </div>
     `
 })
@@ -34,7 +36,7 @@ export class UserComponent{
         this.data.currentMessage.subscribe(mymessage => this.mymessage = mymessage)
     }
 
-    // newMessage(){
-    //     this.data.changeMessage("Hello From Parent/ Sibling");
-    // }
+    newMessage(){
+        this.data.changeMessage("Hello From User Sibling");
+    }
 }

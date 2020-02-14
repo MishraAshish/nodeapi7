@@ -10,7 +10,10 @@
   <button (click)="passUserName()">SendUserName</button>
   <br/>
   <label>{{userNameFromChild}}</label>
+  <br/>
   <b>{{message}}</b>
+  <br/>
+  <button (click)="newMessage()" class="button">New Message</button>
 
   <cart-app 
     [cartType]="cartTypeParent" 
@@ -20,5 +23,5 @@
 
   <!-- <user-child></user-child> -->
   <user-child (messageEvent)="receiveMesssage($event)" ></user-child>
-  <button (click)="newMessage()" class="button">New Message</button>
+  
 </div>
