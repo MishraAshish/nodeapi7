@@ -20,14 +20,14 @@ export class UserComponent{
     childUserName:string = "Child User Name";
     mymessage:string = "Child Message For ViewChild";
 
-    @Output() messageEvent = new EventEmitter<string>();
+    @Output() messageEvent = new EventEmitter<number>();
     
     nameChange(e){
         this.childUserName = e.target.value;
     }
 
     sendNameToParent(){
-        this.messageEvent.emit(this.childUserName);
+        this.messageEvent.emit(25626);
     }
 
     constructor(private data: DataService){}

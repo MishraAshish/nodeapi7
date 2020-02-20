@@ -1,0 +1,148 @@
+//core-javacript: 
+
+//defines primaries of javascript
+//function - first class members/citizens in js, additionally prototype, contructor function
+//objects - Object.create({}), new Obj(), {}
+
+//Protoype chain for inheritance (inheriting objects)
+//EventLoop -  event queue, event queue pointer, stack
+//Hoisting - variables assigned undefined value at time of execution (variable hoisitng)
+ //funtion hoisting - it is hoisted with its definition
+ //Polymorphism - (overriding - is possible), 
+  //important -  overloading - is not possible in js (overwrites)
+//Closure - a parent function returns child function, where child function is having access to parents privet variables,
+//Encapsulation, used to create singleton pattern
+
+
+
+//Closure - a parent function returns child function, where child function is having access to parents privet variables,
+//Encapsulation, used to create singleton pattern
+
+function Parent(params) {
+    let privateVal1 = 25;
+    const privateSomeAge = 50;
+    let specificVariableHiddenOuter = 100;
+
+    let childFunc = function Child(param) {
+        if (param > 25) {
+            return null;    
+        }
+        return param + (privateVal1 - 25) + (privateSomeAge - 10);
+    }
+
+    return childFunc;
+}
+
+let consumerFunction = Parent();
+let consumerOuput = consumerFunction(50);
+
+console.log("consumerOuput - ",consumerOuput);
+
+
+
+//Polymorphism - (overriding - is possible)
+//overloading - is not possible in js (overwrites)
+
+function name(params) {
+    console.log(params);
+}
+
+console.log(name());
+
+function name() {
+    console.log("Ashish");
+}
+
+console.log(name("Navdeep"));
+
+
+//Hoisting
+
+console.log("Print My Name - "+name);
+console.log("Print My Name Function Hoisting- "+ printName());
+
+var name = "Ashish";
+
+function printName() {
+    return "Ashish";
+}
+
+console.log("Print My Name - "+name);
+
+
+//Contructor function and JS Object for prototype inheritance
+
+
+function name(params) {
+    this.name = params;
+}
+
+let myObj = new Object();
+let myObj1 = Object.create({});
+let myObj2 = {};
+
+//ES-6 : Concepts of OOPS
+//let, const
+//html literal `<b></b>`
+//destructuring 
+//array
+[one, two , three] = ["1","2","3"];
+console.log(three);
+
+//for of loop, for in loop (for, foreach) -- do it by yourself
+
+//filter, map, reduce, some - iterartors
+
+const heroes = [
+    { name: 'Wolverine',      family: 'Marvel',    isEvil: false },
+    { name: 'Deadpool',       family: 'Marvel',    isEvil: false },
+    { name: 'Magneto',        family: 'Marvel',    isEvil: true  },
+    { name: 'Charles Xavier', family: 'Marvel',    isEvil: false },
+    { name: 'Batman',         family: 'DC Comics', isEvil: false },
+    { name: 'Harley Quinn',   family: 'DC Comics', isEvil: true  },
+    { name: 'Legolas',        family: 'Tolkien',   isEvil: false },
+    { name: 'Gandalf',        family: 'Tolkien',   isEvil: false },
+    { name: 'Saruman',        family: 'Tolkien',   isEvil: true  }
+  ]
+
+let notEvil = heroes.filter(hero => hero.isEvil == false);  
+console.log(notEvil);
+
+let uniqueFamilyName = heroes.reduce((prev, curr) => {  
+	prev.add(curr.family);  
+	return prev;  
+}, new Set()); //Map, Set 
+console.log([...uniqueFamilyName]); //spread operator
+
+let UpperCaseNames = heroes.map(h => {
+    return {
+      ...h,
+      name: h.name.toUpperCase()
+    }
+  })
+console.log("Upper Case Names -", UpperCaseNames);
+
+
+let onlyNames = heroes.map(obj => "Sir ," +obj.name)
+console.log("OnlyNames -", onlyNames);
+
+printNames(...onlyNames); //spread operator
+
+//Promises 
+//Async Await
+//callbacks - (keeps your context intact whenever it is passed in any function as a parameter)
+//spread operator and rest parameters
+
+function printNames(...restparams) { //rest parameter
+    for (const iterator of restparams) { //For Of
+        console.log("For Of Name - " +iterator);
+    }
+
+    for (const key in restparams) {
+        if (restparams.hasOwnProperty(key)) {
+            const element = restparams[key];
+            console.log("For In Key - " +key);
+            console.log("For In Name (Value) - " +element);
+        }
+    }
+}
