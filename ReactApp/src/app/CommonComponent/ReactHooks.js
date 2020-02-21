@@ -1,5 +1,6 @@
 import React, {useState, useReducer} from "react";
 
+//https://serverless-stack.com/chapters/create-a-custom-react-hook-to-handle-form-fields.html
 //hooks in react to use state in functional component
 const FunctionState = () => {
     // constructor(){
