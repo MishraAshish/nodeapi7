@@ -45,9 +45,9 @@ export class Home extends React.Component{
 
     //Update Life Cycle Method
 
-    // componentWillReceiveProp(nextProps){
-    //     console.log("componentWillReceiveProps -", nextProps);
-    // }
+    componentWillReceiveProp(nextProps){
+        console.log("componentWillReceiveProps -", nextProps);
+    }
 
     // getDerivedStateFromProps(nextProps){
     //     console.log("getDerivedStateFromProps -", nextProps);

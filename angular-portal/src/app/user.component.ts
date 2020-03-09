@@ -19,15 +19,16 @@ import {DataService} from "./data.services";
 export class UserComponent{
     childUserName:string = "Child User Name";
     mymessage:string = "Child Message For ViewChild";
+    message:string = "Child Message For View Child";
 
-    @Output() messageEvent = new EventEmitter<number>();
+    @Output() messageEvent = new EventEmitter<any>();
     
     nameChange(e){
         this.childUserName = e.target.value;
     }
 
     sendNameToParent(){
-        this.messageEvent.emit(25626);
+        this.messageEvent.emit(25626 + this.childUserName);
     }
 
     constructor(private data: DataService){}
@@ -37,6 +38,6 @@ export class UserComponent{
     }
 
     newMessage(){
-        this.data.changeMessage("Hello From User Sibling");
+        this.data.changeMessage("Hello From User Sibling 250050");
     }
 }

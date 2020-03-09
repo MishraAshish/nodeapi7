@@ -42,7 +42,7 @@ export class AppComponent {
   @ViewChild(UserComponent) child;
 
   ngAfterViewInit(){
-    this.message = this.child.message;
+    this.message = this.child.message + "New Batch";
   }
 
 
@@ -51,7 +51,7 @@ export class AppComponent {
   }
 
   newMessage(){
-    this.data.changeMessage("Hello From Parent/ Sibling");
+    this.data.changeMessage("Hello From Parent/ Sibling Using Data Service");
   }
 
 }

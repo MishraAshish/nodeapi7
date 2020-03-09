@@ -12,7 +12,7 @@ import ShowProduct from "./CartApplication/Container/Product/ShowProductContaine
 import Coupon from "./CartApplication/Container/Coupon/CouponContainer";
 import Cart from "./CartApplication/Container/Cart/CartContainer";
 import Checkout from "./CartApplication/Container/Checkout/CheckoutContainer";
-import {AtmDispenser} from "./CommonComponent/AtmDispenser";
+import {AtmDispenser} from "./CommonComponent/AtmDispenserUsingHooks";
 import Loadable from "react-loadable"; //allows lazy loading
 
 // functional component, used as placeholder
