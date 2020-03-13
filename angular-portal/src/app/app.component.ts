@@ -18,7 +18,9 @@ export class AppComponent {
   cartAmountParent = '10000';
   message = "Nothing";
 
-  constructor(private data: DataService){
+  products = [];
+
+  constructor(private dataService: DataService){
     this.title = "Angular Application Title";
   }
 
@@ -47,11 +49,20 @@ export class AppComponent {
 
 
   ngOnInit(){
-    this.data.currentMessage.subscribe(message => this.message = message)
+    this.dataService.currentMessage.subscribe(message => this.message = message);
+
+    this.dataService.getAllProducts().subscribe(
+      (data: any[])=>{
+        console.log(data);
+        this.products = data;
+      },
+    (error) => console.log(error),
+    () => console.log("Complete")
+    ) 
   }
 
   newMessage(){
-    this.data.changeMessage("Hello From Parent/ Sibling Using Data Service");
+    this.dataService.changeMessage("Hello From Parent/ Sibling Using Data Service");
   }
 
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import ShowProductDetails from "../../Component/Product/ShowProductDetailsComponent";
+
 export default class ShowProduct extends React.Component{
 
     componentDidMount() {

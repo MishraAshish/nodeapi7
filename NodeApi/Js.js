@@ -1,10 +1,7 @@
-//output of the following
+function sum(...theArgs) {
+    return theArgs.reduce((previous, current) => {
+      return previous + current;
+    });
+  }
 
-//iife
-
-(function(x) {  
-    return (function(y) {  
-        console.log(x);
-        console.log(y);//1 
-    })(2)  
-})(1);
+console.log(sum(1,2,3,4,5,6))

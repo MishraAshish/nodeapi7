@@ -15,6 +15,13 @@
   <br/>
   <button (click)="newMessage()" class="button">New Message</button>
 
+  <ul class="productTable">
+    <li *ngFor="let product of products">
+        <h2>{{product.productName}} / ${{product.productPrice}}</h2>
+        <p> {{product.display}} </p>
+    </li>
+  </ul>
+
   <cart-app 
     [cartType]="cartTypeParent" 
     [cartAmount]="cartAmountParent" 

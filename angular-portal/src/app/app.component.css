@@ -1,3 +1,14 @@
 .parentClass{
     border: 1px solid sienna;
 }
+
+ul.productTable{
+ text-decoration: none;
+ list-style-type: none;
+}
+.productTable li {
+    border: 1px solid tan;
+    text-decoration: none;    
+    display: flex;   
+    background-color: whitesmoke;
+}
