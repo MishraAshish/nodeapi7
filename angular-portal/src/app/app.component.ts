@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { CartComponent } from "./cart.component";
 import { UserComponent } from "./user.component";
 import {DataService} from "./data.services";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -47,7 +48,6 @@ export class AppComponent {
     this.message = this.child.message + "New Batch";
   }
 
-
   ngOnInit(){
     this.dataService.currentMessage.subscribe(message => this.message = message);
 
@@ -63,6 +63,10 @@ export class AppComponent {
 
   newMessage(){
     this.dataService.changeMessage("Hello From Parent/ Sibling Using Data Service");
+  }
+
+  register(form) {
+    console.log(form.value);
   }
 
 }

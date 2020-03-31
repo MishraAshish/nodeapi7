@@ -16,14 +16,15 @@ const FunctionState = () => {
     // }
 
     const [couponNumber, setCoupon] = useState(2020);
-    const [userName, setName] = useState({Name:"Ashish"});
+    
+    const [userName, setName] = useState({Name:"Ashish", Age:25});
 
     const generateCoupon = () => {
         setCoupon(couponNumber + Math.ceil(Math.random()*10000))
     }
 
     const changeName = () => {
-        setName({Name : userName.Name + " 25"});
+        setName({Name : userName.Name + " 25", Age: 75, City : "NY"});
     }
 
     return (
@@ -32,7 +33,7 @@ const FunctionState = () => {
         Your generated coupon is {couponNumber}
     </button>
     <button onClick={changeName}>
-        Your name is {userName.Name}
+        Your name is {userName.Name + "   " + userName.Age + "   " + userName.City}
     </button>
     </div>)
 }

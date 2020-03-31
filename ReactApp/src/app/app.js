@@ -14,6 +14,7 @@ import Cart from "./CartApplication/Container/Cart/CartContainer";
 import Checkout from "./CartApplication/Container/Checkout/CheckoutContainer";
 import {AtmDispenser} from "./CommonComponent/AtmDispenserUsingHooks";
 import Loadable from "react-loadable"; //allows lazy loading
+import ReactHooks from "./CommonComponent/ReactHooks";
 
 // functional component, used as placeholder
 //when lazy loaded modules delayed
@@ -68,6 +69,7 @@ export default class App extends Component{
                     <Route path="/Counter" exact component={Coupon} />
                     <Route path="/Checkout" exact component={Checkout} />
                     <Route path="/atm" exact component={AtmDispenser} />
+                    <Route path="/hook" exact component={ReactHooks} />
                     <Route path="/" exact component={Home} />
                     <Route path="*" component={NotFound} />
                 </Switch>
