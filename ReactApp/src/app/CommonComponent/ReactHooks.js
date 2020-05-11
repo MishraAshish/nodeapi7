@@ -1,5 +1,4 @@
 import React, {useState, useReducer} from "react";
-
 //https://serverless-stack.com/chapters/create-a-custom-react-hook-to-handle-form-fields.html
 //hooks in react to use state in functional component
 const FunctionState = () => {
@@ -8,7 +7,6 @@ const FunctionState = () => {
     //         coupon:56565
     //     }
     // }
-
     // setCoupon = ()=>{
     //     this.setState({
     //         coupon:56566  
@@ -37,6 +35,4 @@ const FunctionState = () => {
     </button>
     </div>)
 }
-
 export default FunctionState;
-

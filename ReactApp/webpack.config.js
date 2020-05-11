@@ -28,10 +28,10 @@ webpackConfig = {
                 }
             },
             {
-                test:/\.(css|gif|png|jpg|svg)$/,
+                test:/\.(css)$/,
                 include:SRC_DIR,
                 use:['style-loader','css-loader']
-            },
+            },          
             // {
             //     include:SRC_DIR,
             //     test: /\.(gif|png|jpe?g|svg)$/i,
