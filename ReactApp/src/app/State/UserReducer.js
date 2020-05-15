@@ -15,6 +15,7 @@ const INITIAL_STATE ={
 }
 
 export default function userReducer(state=INITIAL_STATE, action) {
+    debugger;
     switch(action.type) {
         case ActionTypes.ADDUSER_USER: 
             console.log("Payload Address", action.payload.user);
