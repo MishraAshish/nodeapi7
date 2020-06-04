@@ -14,8 +14,8 @@ const FunctionState = (props) => {
     //         coupon:56566  
     //     })
     // }
-
-    const [state, dispatch] = useReducer(props.addUser, { firstName: 'Cool' });
+    let initialState = { firstName: 'Cool' };
+    let [state, dispatch] = useReducer(props.addUser, initialState);
 
     const [couponNumber, setCoupon] = useState(2020);
     
@@ -25,14 +25,18 @@ const FunctionState = (props) => {
         setCoupon(couponNumber + Math.ceil(Math.random()*10000))
     }
 
-    const changeName = () => {
+    let changeName = () => {
         setName({Name : userName.Name + " 25", Age: 75, City : "NY"});
-
-        dispatch([{ firstName: 'Cool' }])
+        initialState = {firstName: "Hotter"};
+        debugger;
+        //dispatch = useReducer(props.addUser, initialState);
+        dispatch(initialState);
     }
-
+    console.log("firstName " + props.user.firstName);
+    
     return (
         <div>
+            <b>{props.user.firstName}</b>
             <button onClick={generateCoupon}>
             Your generated coupon is {couponNumber}
         </button>
@@ -43,6 +47,12 @@ const FunctionState = (props) => {
     )
 }
 
+const mapStateToProps = (state) => {
+    return {
+        user:state.user.user
+    }
+}
+
 const mapDispatchToProps = (dispatch) => {
     return {
         addUser:(user) => {
@@ -51,4 +61,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(FunctionState);
+export default connect(mapStateToProps, mapDispatchToProps)(FunctionState);
